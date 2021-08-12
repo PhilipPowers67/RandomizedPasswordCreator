@@ -1,14 +1,17 @@
 var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var upparray = upperChar.split("");
+let upparray = upperChar.split("");
 var lowerChar = "abcdefghijklmnopqrstuvwxyz";
-var lowarray = lowerChar.split("");
+let lowarray = lowerChar.split("");
 var numberChar = "1234567890";
-var numarray = numberChar.split("");
+let numarray = numberChar.split("");
 var specChar = "!@#$%^&*_-+~";
-var specarray = specChar.split("");
+let specarray = specChar.split("");
+
 
 
 var allPasswordCharacters = [];
+
+
 
 // Assignment code here
 function generatePassword() {
@@ -18,37 +21,31 @@ function generatePassword() {
     generatePassword();
   }
   var upperCase = confirm("Would you like uppercase letters?");
-  // console.log(upperCase);
+    console.log(upperCase);
   if (upperCase) {
     allPasswordCharacters.push(upparray);
-  // console.log(allPasswordCharacters);
 }
   var lowerCase = confirm("Would you like lowercase letters?");
-  // console.log(lowerCase);
+    console.log(lowerCase);
   if (lowerCase) {
     allPasswordCharacters.push(lowarray);
-    // console.log(allPasswordCharacters);
 }
   var numbers = confirm("Would you like numbers?");
   if (numbers) {
     allPasswordCharacters.push(numarray);
-  }
-
-
+}
+  var specialLetters = confirm("Would you like to add special Characters?");
+  if (specialLetters) {
+    allPasswordCharacters.push(specarray);
+    console.log(allPasswordCharacters);
+}
 
   randomized(charLength);
-  return 
+  return "";
 }
 
 
-function randomized(length) {
-  var passwordChar = []
-  for (var i = 0; i < length; i++) {
-  var char = Math.floor(Math.random() * allPasswordCharacters.length)
-  passwordChar.push(char); 
-  console.log("char", char);
-}
-}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
