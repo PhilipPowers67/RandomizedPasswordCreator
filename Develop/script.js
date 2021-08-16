@@ -1,5 +1,4 @@
 var generateBtn = document.querySelector("#generate");
-console.log(generateBtn);
 generateBtn.addEventListener("click", writePassword);
   // Arrays that can be put into password generator.
     upperChar =  'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -34,33 +33,38 @@ function generatePassword() {
   var allPasswordCharacters = [];
   
     //confirm password character choices.
+    
     if (upperCharact) {
       allPasswordCharacters += upperChar;
     }
+    
     
     if (lowerCharact) {
       allPasswordCharacters += lowerChar;
     }
 
+    
     if (numberCharact) {
       allPasswordCharacters += numberChar;
     }
 
+    
     if (specCharact) {
       allPasswordCharacters += specChar;
     }
+    //if statement in case no characters are selected
       if (!upperCharact && !lowerCharact && !numberCharact && !specCharact) {
       alert("Please choose one character type!");
      return;
     };
     // console.log(allPasswordCharacters);
-
+    // loop and return with function to call randomized password
     var userPass = "";
 
     for (var i = 0; i < length; i++) {
     userPass += allPasswordCharacters.charAt(Math.floor(Math.random() * allPasswordCharacters.length));
       // console.log(userPass);
-    }
+        }
 
     return userPass;
   }
@@ -73,14 +77,6 @@ function generatePassword() {
     passwordText.value = password;
 
   }
-
-    
-  
-  
-   function randomized(length) {
-    
-    
-   }
 
   
 
